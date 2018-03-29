@@ -2,7 +2,36 @@
 
 ## Maps
 
+**Map** is a new way to store **key/value** pairs, while similar to objects **Map** is a bit more reliable when storing key/values. *This is due to the fact that Objects convert both keys and values to strings.*
+
+According to [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) 
+> The Map object is a simple key/value map. Any value (both objects and primitive values) may be used as either a key or a value.
+
+```javascript
+let student = {name: "Latori"};
+let status = new Map();
+
+status.set(name, "Latori");
+status.set("feeling", "awesome")
+console.log(status.get(name));
+console.log(status.get("feeling"))
+//Latori
+//awesome
+```
+- to set a value use `set`
+- to get an object use `get`
+
 ## Sets
+
+**Set** is a collection of unique values
+
+```javascript
+let student = new Set();
+student.add('Katy').add({mood: "happy"});
+
+console.log(student);
+// ["Katy",{"mood":"happy"}]
+```
 
 ## Aside: Running a Server Locally
 
