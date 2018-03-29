@@ -4,6 +4,45 @@
 
 **Map** is a new way to store **key/value** pairs, while similar to objects **Map** is a bit more reliable when storing key/values.
 
+### Examples
+
+```javascript
+let student = { name: "Latori" };
+let status = new Map();
+
+status.set(name, "Latori");
+status.set("feeling", "awesome")
+console.log(status.get(name)); // Latori
+console.log(status.get("feeling")) // awesome
+```
+- To set a value use `set`
+- To get an object use `get`
+
+```javascript
+var myMap = new Map();
+
+var keyString = 'a string',
+    keyObj = {},
+    keyFunc = function() {};
+
+// setting the values
+myMap.set(keyString, "value associated with 'a string'");
+myMap.set(keyObj, 'value associated with keyObj');
+myMap.set(keyFunc, 'value associated with keyFunc');
+
+myMap.size; // 3
+
+// getting the values
+myMap.get(keyString);    // "value associated with 'a string'"
+myMap.get(keyObj);       // "value associated with keyObj"
+myMap.get(keyFunc);      // "value associated with keyFunc"
+
+myMap.get('a string');   // "value associated with 'a string'"
+                         // because keyString === 'a string'
+myMap.get({});           // undefined, because keyObj !== {}
+myMap.get(function() {}) // undefined, because keyFunc !== function () {}
+```
+
 ### Why use a Map over an Object?
 
 A Map object can iterate its elements in insertion order - and it comes with a `forEach` and `clear` method - along with a `size` property.
@@ -15,20 +54,6 @@ An Object has a prototype, so there are default keys in the map. However, this c
 Use maps over objects when keys are unknown until run time, and when all keys are the same type and all values are the same type.
 
 Use objects when there is logic that operates on individual elements.
-
-```javascript
-let student = {name: "Latori"};
-let status = new Map();
-
-status.set(name, "Latori");
-status.set("feeling", "awesome")
-console.log(status.get(name));
-console.log(status.get("feeling"))
-//Latori
-//awesome
-```
-- to set a value use `set`
-- to get an object use `get`
 
 ## Sets
 
@@ -61,7 +86,7 @@ mySet.delete(5); // removes 5 from the set
 mySet.has(5);    // false, 5 has been removed
 
 mySet.size; // 4, we just removed one value
-console.log(mySet);// Set [ 1, "some text", Object {a: 1, b: 2}, Object {a: 1, b: 2} ]
+console.log(mySet);// Set [ 1, "some text", Object { a: 1, b: 2 }, Object { a: 1, b: 2 } ]
 ```
 
 A cool trick with Sets is that you can convert arrays to sets and immediately get out only the unique values.
