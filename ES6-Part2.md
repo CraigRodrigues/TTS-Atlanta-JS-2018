@@ -19,6 +19,177 @@
 
 ## Modules
 
-Now we are going to refactor our Youtube Clone app to use ES6 modules! But why use modules?
+🚀 Now we are going to refactor our Youtube Clone app to use ES6 modules! But why use modules?
 
 ### Why Modules
+
+This provides several significant benefits including:
+
+- avoids naming conflicts
+- removes global variables
+- better control over scope
+- better control over 3rd party libraries
+- logical load order
+- faster tests
+
+To many, this is the most exciting feature of ES2015
+
+Modules consist of **export** and **import** statements
+
+According to Mozilla:
+
+Export:
+
+> ...is used to export functions, objects or primitives from a given file (or module).
+
+Import:
+
+> ...is used to import functions, objects or primitives that have been exported from an external module, another script, etc.
+
+
+let's take a look some basic examples:
+
+
+### exporting a single function
+```javascript
+// ./src/calculator.js
+
+export function add(...numbers) {	
+  let sum = 0;
+  numbers.forEach(function (number) {
+    sum += number;
+  });
+  return sum;
+}
+```
+
+```javascript
+// .src/index.js
+
+import {add} from './calculator';
+
+console.log(add(1,2,3));
+```
+
+
+### exporting multiple items
+```javascript
+// ./src/calculator.js
+
+export function add(...numbers) {
+  let sum = 0;
+  numbers.forEach(function (number) {
+    sum += number;
+  });
+  return sum;
+};
+
+export function subtract(x,y) {
+  return x - y;
+};
+```
+
+```javascript
+// .src/index.js
+
+import {add, subtract} from './calculator';
+
+console.log(add(1,2,3));
+console.log(subtract(6,2));
+```
+
+**Variables and Constants can also be exported**
+
+```javascript
+// ./src/calculator.js
+
+export const numbersArray = [1,2,3,4,5];
+```
+
+```javascript
+// ./src/index.js
+
+import _ from 'lodash';
+
+console.log(_.shuffle(numbersArray));
+```
+
+**Default Exporting** allows you to set one item as default. This is helpful with a module or class that returns a single value
+
+```javascript
+// ./src/calculator.js
+
+export default function add(...numbers) {
+  let sum = 0;
+  numbers.forEach(function (number) {
+    sum += number;
+  });
+  return sum;
+};
+```
+
+```javascript
+// ./src/index.js
+
+import add from './calculator';
+
+console.log(add(1,2,3));
+```
+
+Only one default can be clarified per module. <br>
+Modules can, however, have default and named exports
+
+```javascript
+// ./src/calculator.js
+
+export default function add(...numbers) {
+  let sum = 0;
+  numbers.forEach(function (number) {
+    sum += number;
+  });
+  return sum;
+};
+
+export function subtract(x,y) {
+  return x - y;
+};
+
+```
+
+```javascript
+// ./src/index.js
+
+import add, {subtract} from './calculator';
+
+console.log(add(1,2,3));
+console.log(subtract(6,2));
+```
+
+One final way to import is by using the `*` (all, wildcard) operator. This syntax will import all exports. 
+
+```javascript
+// ./src/calculator.js
+
+export function add(...numbers) {
+  let sum = 0;
+  numbers.forEach(function (number) {
+    sum += number;
+  });
+  return sum;
+};
+
+export function subtract(x,y) {
+  return x - y;
+};
+```
+
+```javascript
+// ./src/index.js
+
+import * as calculate from './calculator';
+
+console.log(calculate.add(1,2,3));
+console.log(calculate.subtract(6,2));
+```
+
+As you can see, writing modular code is the future of JavaScript. The modular pattern will be heavily used as we move into building applications with React. 
