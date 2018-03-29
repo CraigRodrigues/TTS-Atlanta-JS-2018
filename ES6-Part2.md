@@ -264,14 +264,21 @@ console.log(calculate.subtract(6,2));
 
 As you can see, writing modular code is the future of JavaScript. The modular pattern will be heavily used as we move into building applications with React.
 
-## ⭐️ Now refactor your Youtube App to use modules ⭐️
+## ⭐️ On a new branch refactor your Youtube App to use modules ⭐️
+
+### Branching
+
+https://www.atlassian.com/git/tutorials/using-branches
+
+### Checkout/Changing Branches
+
+https://www.atlassian.com/git/tutorials/using-branches/git-checkout
 
 ## Class Syntax
 
-One of the most interesting/exciting features of ES2015 is the introduction of Object Oriented Keywords. 
-The benefit of this feature, is that developers more accustomed to Object Oriented Programming can more easily work with Constructors and Prototypes.
+One of the more interesting features of ES6 is the introduction of Object Oriented Keywords. People fall on both sides of the fence when it comes to ES6 Classes. Some feel it's not useful at all, others enjoy it. Just remember that this is simply "syntactic sugar", not an actual change to the functional nature of JavaScript. **JavaScript has no REAL notion of Classes!**
 
-*note: the class features simply syntactic sugar, not an actual change to the functional nature of JavaScript*
+The benefit of this feature, is that developers more accustomed to Object Oriented Programming can more easily work with Constructors and Prototypes.
 
 ##### *the old-fashioned way*
 ```javascript
@@ -405,3 +412,8 @@ The 3 things that you'll notice:
 -  the use of `super()` allows us to:
 	-  reuse the exisiting `name` functionality from the Person `class`
 	-  add superhero specific features to our constructor function
+	
+## ⭐️ On a new branch refactor your Youtube App to use ES6 Classes ⭐️
+
+- You should have one class that handles the homepage
+- And another that handles the videopage
