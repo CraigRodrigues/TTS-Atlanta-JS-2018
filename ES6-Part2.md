@@ -420,7 +420,7 @@ The 3 things that you'll notice:
 
 ## HOMEWORK DUE 4/2/18
 
-### 1. Watch this [video on ES6 Classes]()
+### 1. Watch this [video on ES6 Classes](www.youtube.com/watch?v=EUtZRwA7Fqc)
 
 ### 2. Finish refactoring your Youtube Clone app to use ES6 Modules and ES6 Classes if you didn't finish in class (be sure to put this stuff on a new branch!)
 
@@ -448,4 +448,4 @@ The 3 things that you'll notice:
 > 11. Tigers can't eat grain because they have sensitive digestive systems.
 > 12. Bonus Item: The jungle can have each animal perform a random activity out of the ones possible for that animal. **Include simple unit tests.**
 
-### 🚀 BONUS: Complete the remainder of the Count to 6 NodeSchool Module
+### 🚀 BONUS: Complete the remainder of the [Count to 6](https://github.com/domenic/count-to-6) NodeSchool Module
