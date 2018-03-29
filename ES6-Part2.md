@@ -2,10 +2,19 @@
 
 ## Maps
 
-**Map** is a new way to store **key/value** pairs, while similar to objects **Map** is a bit more reliable when storing key/values. *This is due to the fact that Objects convert both keys and values to strings.*
+**Map** is a new way to store **key/value** pairs, while similar to objects **Map** is a bit more reliable when storing key/values.
 
-According to [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) 
-> The Map object is a simple key/value map. Any value (both objects and primitive values) may be used as either a key or a value.
+### Why use a Map over an Object?
+
+A Map object can iterate its elements in insertion order - and it comes with a `forEach` and `clear` method - along with a `size` property.
+
+Objects are similar to Maps in that both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Because of this, Objects have been used as Maps historically; however, there are important differences between Objects and Maps that make using a Map better.
+
+An Object has a prototype, so there are default keys in the map. However, this can be bypassed using map = Object.create(null). **The keys of an Object are Strings, where they can be any value for a Map.** You can get the size of a Map easily while you have to manually keep track of size for an Object.
+
+Use maps over objects when keys are unknown until run time, and when all keys are the same type and all values are the same type.
+
+Use objects when there is logic that operates on individual elements.
 
 ```javascript
 let student = {name: "Latori"};
@@ -23,14 +32,46 @@ console.log(status.get("feeling"))
 
 ## Sets
 
-**Set** is a collection of unique values
+**Set** is a like a map, but can only have unique values.
+
+You can iterate through the elements of a set in insertion order with `forEach`. A value in the Set may only occur once; it is unique in the Set's collection.
 
 ```javascript
-let student = new Set();
-student.add('Katy').add({mood: "happy"});
+var mySet = new Set();
 
-console.log(student);
-// ["Katy",{"mood":"happy"}]
+mySet.add(1); // Set [ 1 ]
+mySet.add(5); // Set [ 1, 5 ]
+mySet.add(5); // Set [ 1, 5 ]
+mySet.add('some text'); // Set [ 1, 5, 'some text' ]
+var o = {a: 1, b: 2};
+mySet.add(o);
+
+mySet.add({a: 1, b: 2}); // o is referencing a different object so this is okay
+
+mySet.has(1); // true
+mySet.has(3); // false, 3 has not been added to the set
+mySet.has(5);              // true
+mySet.has(Math.sqrt(25));  // true
+mySet.has('Some Text'.toLowerCase()); // true
+mySet.has(o); // true
+
+mySet.size; // 5
+
+mySet.delete(5); // removes 5 from the set
+mySet.has(5);    // false, 5 has been removed
+
+mySet.size; // 4, we just removed one value
+console.log(mySet);// Set [ 1, "some text", Object {a: 1, b: 2}, Object {a: 1, b: 2} ]
+```
+
+A cool trick with Sets is that you can convert arrays to sets and immediately get out only the unique values.
+
+```javascript
+let array = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4];
+let mySet = new Set(array); // {1, 2, 3, 4} --> Set object
+let uniqArray = Array.from(mySet);
+
+console.log(uniqArray); // [1, 2, 3, 4]
 ```
 
 ## Aside: Running a Server Locally
