@@ -424,7 +424,7 @@ The 3 things that you'll notice:
 
 ### 2. Finish refactoring your Youtube Clone app to use ES6 Modules and ES6 Classes if you didn't finish in class (be sure to put this stuff on a new branch!)
 
-### 3. Refactor your Jungle Challenge Homework using ES6 Classes!
+### 3. Refactor your Jungle Challenge Homework using ES6 Classes! (Instructions below)
 
 #### Create the objects that you feel would best model a jungle using your best Object Oriented design or functional approach and coding practices based on the following requirements:
 
