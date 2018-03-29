@@ -417,3 +417,35 @@ The 3 things that you'll notice:
 
 - You should have one class that handles the homepage
 - And another that handles the videopage
+
+## HOMEWORK DUE 4/2/18
+
+### 1. Watch this [video on ES6 Classes]()
+
+### 2. Finish refactoring your Youtube Clone app to use ES6 Modules and ES6 Classes if you didn't finish in class (be sure to put this stuff on a new branch!)
+
+### 3. Refactor your Jungle Challenge Homework using ES6 Classes!
+
+#### Create the objects that you feel would best model a jungle using your best Object Oriented design or functional approach and coding practices based on the following requirements:
+
+> 1. The jungle contains several species of animals; tigers, monkeys and snakes.
+> 2. All animals can do three things, make a sound, eat food, and sleep.
+> 3. Each species of animal knows how many others of its kind exist.
+> 4. By default when an animal’s energy level changes, it changes in the following ways:
+
+>      a. -3 for making a sound
+
+>      b. +5 for eating food
+
+>      c. +10 for sleeping
+
+> 5. The jungle can perform a sound off. This involves all of the animals in the jungle each making their sound, along with reporting their energy level.
+> 6. Tigers get +5 energy for sleeping.
+> 7. Monkeys get +2 energy for eating and -4 energy for making a sound.
+> 8. Some animals have the ability to play.
+> 9. Only monkeys can play. When they do they say "Oooo Oooo Oooo" and get -8 energy. If a monkey doesn't have enough energy > to play they say "Monkey is too tired".
+> 10. The jungle contains several types of food; meat, fish, bugs and grain.
+> 11. Tigers can't eat grain because they have sensitive digestive systems.
+> 12. Bonus Item: The jungle can have each animal perform a random activity out of the ones possible for that animal. **Include simple unit tests.**
+
+### 🚀 BONUS: Complete the remainder of the Count to 6 NodeSchool Module
