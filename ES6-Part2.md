@@ -2,7 +2,7 @@
 
 ## Maps
 
-**Map** is a new way to store **key/value** pairs, while similar to objects **Map** is a bit more reliable when storing key/values.
+**Map** is a new way to store **key/value** pairs, while similar to objects **Map** is a bit more reliable when storing key/values. Maps are also know as **Dictionaries**
 
 ### Examples
 
