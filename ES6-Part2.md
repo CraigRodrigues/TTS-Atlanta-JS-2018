@@ -57,18 +57,19 @@ Use objects when there is logic that operates on individual elements.
 
 ## Sets
 
-**Set** is a like a map, but can only have unique values.
+**Set** is an array, but can only have unique values
 
 You can iterate through the elements of a set in insertion order with `forEach`. A value in the Set may only occur once; it is unique in the Set's collection.
 
 ```javascript
-var mySet = new Set();
+var mySet = new Set(); // {}
 
-mySet.add(1); // Set [ 1 ]
-mySet.add(5); // Set [ 1, 5 ]
-mySet.add(5); // Set [ 1, 5 ]
-mySet.add('some text'); // Set [ 1, 5, 'some text' ]
-var o = {a: 1, b: 2};
+mySet.add(1); // Set { 1 }
+mySet.add(5); // Set { 1, 5 }
+mySet.add(5); // Set { 1, 5 }
+mySet.add('some text'); // Set { 1, 5, 'some text' }
+
+var o = { a: 1, b: 2 };
 mySet.add(o);
 
 mySet.add({a: 1, b: 2}); // o is referencing a different object so this is okay
@@ -94,7 +95,7 @@ A cool trick with Sets is that you can convert arrays to sets and immediately ge
 ```javascript
 let array = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4];
 let mySet = new Set(array); // {1, 2, 3, 4} --> Set object
-let uniqArray = Array.from(mySet);
+let uniqArray = [...mySet];
 
 console.log(uniqArray); // [1, 2, 3, 4]
 ```
