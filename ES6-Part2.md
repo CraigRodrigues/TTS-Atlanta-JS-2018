@@ -87,7 +87,7 @@ console.log(uniqArray); // [1, 2, 3, 4]
 - Take a note of the GET requests http-server responds to when you go there
 - The app still works correct, except now it uses the actual client-server model the browser expects!
 
-## Modules
+## Modules, Import and Export
 
 🚀 Now we are going to refactor our Youtube Clone app to use ES6 modules! But why use modules?
 
@@ -262,4 +262,146 @@ console.log(calculate.add(1,2,3));
 console.log(calculate.subtract(6,2));
 ```
 
-As you can see, writing modular code is the future of JavaScript. The modular pattern will be heavily used as we move into building applications with React. 
+As you can see, writing modular code is the future of JavaScript. The modular pattern will be heavily used as we move into building applications with React.
+
+## ⭐️ Now refactor your Youtube App to use modules ⭐️
+
+## Class Syntax
+
+One of the most interesting/exciting features of ES2015 is the introduction of Object Oriented Keywords. 
+The benefit of this feature, is that developers more accustomed to Object Oriented Programming can more easily work with Constructors and Prototypes.
+
+*note: the class features simply syntactic sugar, not an actual change to the functional nature of JavaScript*
+
+##### *the old-fashioned way*
+```javascript
+function Person (name, job) {
+  this.name = name;
+  this.job = job;
+};
+ 
+Person.prototype.getName = function getName () {
+  return this.name;
+};
+ 
+Person.prototype.getJob = function getJob () {
+  return this.job;
+};
+var goodGuy = new Person('Jim Gordon', 'Commissioner');
+console.log(goodGuy.getName());
+// Jim Gordon
+```
+
+##### *the ES2015 way*
+```javascript
+class Person {
+ 
+  constructor (name, job) {
+    this.name = name;
+    this.job = job;
+  }
+ 
+  getName () {
+    return this.name;
+  }
+ 
+  getJob () {
+    return this.job;
+  }
+}
+
+let goodGuy = new Person('Jim Gordon', 'Commissioner');
+console.log(goodGuy);
+//Jim Gordon
+```
+
+For those of you that have experience in Ruby or Python, this syntax should look and feel familiar. 
+
+- Use the `class` keyword followed by a capitalized name
+- add a constructor function 
+- add instance methods that give you access to the object's properties
+
+### Inheritance
+  
+This syntatic sugar also provides a really nice and clean way to create inheritance chains 
+
+*note remember that JS inhertance is still instance based (not class based)*
+
+##### the old-fashioned way
+```javascript
+function Person (name, job) {
+  this.name = name;
+  this.job = job;
+};
+ 
+Person.prototype.getName = function getName () {
+  return this.name;
+};
+ 
+Person.prototype.getJob = function getJob () {
+  return this.job;
+};
+
+function SuperHero (name, heroName) {
+  Person.call(this, name, heroName);
+}
+
+SuperHero.prototype = Object.create(Person.prototype);
+SuperHero.prototype.constructor = SuperHero;
+
+SuperHero.parent = Person.prototype;
+SuperHero.prototype.getJob = function () {
+  return 'I am '+ this.job + "!"
+};
+
+var batman = new SuperHero('Bruce Wayne', 'Batman');
+
+console.log(batman.getJob()); 
+```
+
+As you can see, this is pretty verbose. Let's take a look at the ES2015 way 
+
+##### *the ES2015 way*
+```javascript
+class Person {
+ 
+  constructor (name, job) {
+    this.name = name;
+    this.job = job;
+  }
+ 
+  getName () {
+    return this.name;
+  }
+ 
+  getJob () {
+    return this.job;
+  }
+}
+
+class SuperHero extends Person {
+ 
+  constructor (name, heroName, superPower) {
+    super(name);
+    this.heroName = heroName;
+    this.superPower = superPower;
+  }
+  
+  secretIdentity(){
+    return `${this.heroName} is ${this.name}!!!`
+  }
+ 
+}
+let batman = new SuperHero("Bruce Wayne", "Batman");
+
+console.log(batman.secretIdentity())
+// Batman is Bruce Wayne!!!
+```
+
+The 3 things that you'll notice:
+
+- create a new SuperHero `class`
+- use the `extends` keyword to indicate you want to inherit from the Person `class`<br> *after all, superhero's are People too*
+-  the use of `super()` allows us to:
+	-  reuse the exisiting `name` functionality from the Person `class`
+	-  add superhero specific features to our constructor function
