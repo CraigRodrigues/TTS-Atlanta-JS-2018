@@ -121,7 +121,7 @@ This provides several significant benefits including:
 - better control over scope
 - better control over 3rd party libraries
 - logical load order
-- faster tests
+- always uses strict mode (without having to type 'strict mode')
 
 To many, this is the most exciting feature of ES2015
 
