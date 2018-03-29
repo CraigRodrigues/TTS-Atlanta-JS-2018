@@ -79,7 +79,9 @@ console.log(uniqArray); // [1, 2, 3, 4]
 🚀 Now we are going to refactor our Youtube Clone app to use ES6 modules! But why use modules?
 
 > Good authors divide their books into chapters and sections; good programmers divide their programs into modules.
+
 > Like a book chapter, modules are just clusters of words (or code, as the case may be).
+
 > Good modules, however, are highly self-contained with distinct functionality, allowing them to be shuffled, removed, or added as necessary, without disrupting the system as a whole.
 
 *[JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc)*
