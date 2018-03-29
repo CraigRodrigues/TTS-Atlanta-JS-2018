@@ -82,7 +82,7 @@ console.log(uniqArray); // [1, 2, 3, 4]
 > Like a book chapter, modules are just clusters of words (or code, as the case may be).
 > Good modules, however, are highly self-contained with distinct functionality, allowing them to be shuffled, removed, or added as necessary, without disrupting the system as a whole.
 
-*(JavaScript Modules: A Beginner’s Guide)[https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc]*
+*[JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc)*
 
 ### Why Modules
 
