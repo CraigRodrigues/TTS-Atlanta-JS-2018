@@ -155,10 +155,10 @@ When you install packages locally, you normally do so using a package.json file.
 
 ```node
 $ npm init
-package name: (project)
+package name: simple math
 version: (1.0.0)
-description: Demo of package.json
-entry point: (index.js)
+description: Super simple math functions
+entry point: index.js
 test command:
 git repository:
 keywords:
@@ -170,9 +170,9 @@ Press Enter to accept the defaults, then type yes to confirm. This will create a
 
 ```JSON
 {
-  "name": "project",
+  "name": "simple math",
   "version": "1.0.0",
-  "description": "",
+  "description": "Super simple math functions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -184,7 +184,54 @@ Press Enter to accept the defaults, then type yes to confirm. This will create a
 
 **If you want a quicker way to generate a package.json file use `npm init --y`**
 
+The main field is the primary entry point to your program and the scripts field lets you specify script commands that are run at various times. We will go further into npm scripts a little bit later.
+
+Now let’s try and install Tape.
+
+`npm install Tape`
+
+Now if we have a look in `package.json` we will see that a dependencies field has been added:
+
+```JSON
+{
+  ...
+  "dependencies": {
+    "tape": "^1.8.3"
+  }
+}
+```
+
+## Managing dependencies with package.json
+
+As you can see, Tape v1.8.3 was installed in our project.
+
+The caret (^) at the front of the version number indicates that when installing, npm will pull in the highest version of the package it can find where the only the major version has to match (unless a package-lock.json file is present). In our case, that would be anything below v2.0.0.
+
+This method of versioning dependencies (major.minor.patch) is known as semantic versioning. You can read more about it here: [Semantic Versioning: Why You Should Be Using it.](https://www.sitepoint.com/semantic-versioning-why-you-should-using/)
+
+Also notice that Tape was saved as a property of the dependencies field. This has become the default in the latest version of npm and is used for packages required for the application to run.
+
+It would also be possible to save a package as a devDependency by specifying a -D flag. devDependencies are packages used for development purposes, for example for running tests (with Tape) or transpiling code.
+
+By far and away the biggest reason for using package.json to specify a project’s dependencies is **portability**.
+
+For example, when you clone someone else’s code, all you have to do is run `npm i` in the project root and npm will resolve and fetch all of the necessary packages for you to run the app.
+
+## Uninstalling a Package
+
+npm is a package manager so it must be able to remove a package.
+
+`npm uninstall tape`
+
+## Installing a specific version of a package
+
+`npm install tape@4.9.0`
+
 ## Tape and TDD in Node
+
+Let's reinstall tape, however this time as a Dev Dependency! `npm i -D tape`
+
+You can read all about Tape here: [https://www.npmjs.com/package/tape](https://www.npmjs.com/package/tape)
 
 ## Lowdasher ES6...with Testing!
 
