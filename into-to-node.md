@@ -81,7 +81,28 @@ Importing in Node is done via the `require` method, which must be assigned to a 
 
 Also notice that Node will add .js to the end of the file you are requiring by default unlike with ES6.
 
+## Core Modules
+
+Node.js is a light weight framework. The core modules include bare minimum functionalities of Node.js. These core modules are compiled into its binary distribution and load automatically when Node.js process starts. **However, you need to import the core module first in order to use it in your application.**
+
+The following table lists some of the important core modules in Node.js.
+
+| Core Module | Description |
+| :----------- | :----------|
+| http        | http module includes classes, methods and events to create Node.js http server. |
+| url         | url module includes methods for URL resolution and parsing |
+| querystring | querystring module includes methods to deal with query string. |
+| path        | path module includes methods to deal with file paths. |
+| fs          | fs module includes classes, methods, and events to work with file I/O. |
+| util        | util module includes utility functions useful for programmers. |
+
+Core modules do not need a path to be required. You can just use the name directly like this: `require('http')`
+
 ## npm
+
+### What is it?
+
+### Why is it a thing?
 
 ## package.json
 
