@@ -6,7 +6,7 @@ So far we have been running all of our JavaScript in the browser, but we can als
 
 Just like how the browser adds functionality to JavaScript like the DOM and event listeners, Node adds functionality to JavaScript on the server with methods that allow you to read files, user input from the command line and much more.
 
-Advantages of Node:
+### Advantages of Node:
 
 1. Ability to handle thousands of concurrent connections with minimal overhead on a single process.
 1. JavaScript is perfect for event loops with first class function objects and closures.
@@ -29,9 +29,10 @@ Node has its own module system based on what is know as the CommonJS module syst
 
 Let's compare Node module vs ES6 module syntax
 
-### exporting a module
+### Exporting a module
 
-Node
+#### Node
+
 ```javascript
 // add.js
 const add = (a, b) => a + b;
@@ -39,7 +40,8 @@ const add = (a, b) => a + b;
 module.exports = { add };
 ```
 
-ES6
+#### ES6/Browser
+
 ```javascript
 // add.js
 const add = (a, b) => a + b;
@@ -49,9 +51,10 @@ export { add };
 
 In Node all your exports are just properties on the `module.exports` object. Just add to it to export properly!
 
-### importing a module
+### Importing a module
 
-Node
+#### Node
+
 ```javascript
 // index.js
 const math = require('./add');
@@ -65,7 +68,8 @@ const { add } = require('./add');
 add(2, 2); // 4
 ```
 
-ES6/Browser
+#### ES6/Browser
+
 ```javascript
 // index.js
 import { add } from './add.js';
