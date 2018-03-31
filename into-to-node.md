@@ -19,6 +19,8 @@ While Node is still using JavaScript under the hood, it implements things JavaSc
 
 Eventhough ES6 has been released, it can only be used in certain versions of Node!
 
+To see the version of node you have running type `node --version` or `node -v`
+
 ## Using node
 
 In your terminal you can access the Node REPL and use it by typing `node` and hitting ENTER.
@@ -132,9 +134,55 @@ See the README for instructions
 
 ### Why is it a thing?
 
-## package.json
+### Installing a Package
+
+Locally: `npm install <package name>`
+Globally: `npm install -g <package name>`
+
+npm can install packages in local or global mode. In local mode it installs the package in a `node_modules` folder in your parent working directory. This location is owned by the current user.
+
+Global packages are installed in `{prefix}/lib/node_modules/` which is owned by root (where `{prefix}` is usually `/usr/` or `/usr/local`). This means you would have to use `sudo` to install packages globally.
 
 ## n
+
+We can use an npm package called `n` (just the letter n) to help us keep track of the version of Node we are using (and will also help you update it).
+
+Let's install it globally so we can use the `n` command anywhere: `npm i -g n`
+
+## package.json
+
+When you install packages locally, you normally do so using a package.json file. Let’s go ahead and create one.
+
+```node
+$ npm init
+package name: (project)
+version: (1.0.0)
+description: Demo of package.json
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+```
+
+Press Enter to accept the defaults, then type yes to confirm. This will create a package.json file at the root of the project.
+
+```JSON
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+**If you want a quicker way to generate a package.json file use `npm init --y`**
 
 ## Tape and TDD in Node
 
