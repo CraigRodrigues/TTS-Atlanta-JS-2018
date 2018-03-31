@@ -1,12 +1,12 @@
 # Introduction to Node JS and npm
 
-## What is Node JS exactly?
+## What is Node JS exactly
 
 So far we have been running all of our JavaScript in the browser, but we can also run it on any computer (servers). Node JS was created for this reason.
 
 Just like how the browser adds functionality to JavaScript like the DOM and event listeners, Node adds functionality to JavaScript on the server with methods that allow you to read files, user input from the command line and much more.
 
-### Advantages of Node:
+### Advantages of Node
 
 1. Ability to handle thousands of concurrent connections with minimal overhead on a single process.
 1. JavaScript is perfect for event loops with first class function objects and closures.
@@ -15,9 +15,29 @@ Just like how the browser adds functionality to JavaScript like the DOM and even
 
 ## Versioning
 
-While Node is still using JavaScript under the hood, it implements things JavaScript cannot do using C (reading files, streams, deal with HTTP requests). Also the engine that is powering Node is V8 (Google's JS engine that powers Chrome).
+While Node is still using JavaScript under the hood, it implements things JavaScript cannot do using C++ (reading files, streams, deal with HTTP requests). Also the engine that is powering Node is V8 (Google's JS engine that powers Chrome).
 
 Eventhough ES6 has been released, it can only be used in certain versions of Node!
+
+## Using node
+
+In your terminal you can access the Node REPL and use it by typing `node` and hitting ENTER.
+
+You will get another command prompt and you can start typing and evaluating JS.
+
+```node
+$ node
+> console.log('Node is running');
+Node is running
+> .help
+.break Sometimes you get stuck, this gets you out
+.clear Alias for .break
+.exit  Exit the repl
+.help  Show repl options
+.load  Load JS from a file into the REPL session
+.save  Save all evaluated commands in this REPL session to a file
+> .exit
+```
 
 ## Node Modules
 
@@ -107,6 +127,8 @@ See the README for instructions
 ## npm
 
 ### What is it?
+
+[Intro to NPM Video](https://www.youtube.com/watch?v=x03fjb2VlGY)
 
 ### Why is it a thing?
 
