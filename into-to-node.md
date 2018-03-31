@@ -98,6 +98,12 @@ The following table lists some of the important core modules in Node.js.
 
 Core modules do not need a path to be required. You can just use the name directly like this: `require('http')`
 
+## Exercise 01 - Simple Math
+
+Download and complete the exercise called simple-math.
+
+See the README for instructions
+
 ## npm
 
 ### What is it?
