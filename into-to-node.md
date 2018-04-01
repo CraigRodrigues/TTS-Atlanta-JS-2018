@@ -153,7 +153,7 @@ Let's install it globally so we can use the `n` command anywhere: `npm i -g n`
 
 When you install packages locally, you normally do so using a package.json file. Let’s go ahead and create one.
 
-```node
+```
 $ npm init
 package name: simple math
 version: (1.0.0)
@@ -192,18 +192,18 @@ Now let’s try and install Tape.
 
 Now if we have a look in `package.json` we will see that a dependencies field has been added:
 
-```JSON
+```
 {
   ...
   "dependencies": {
-    "tape": "^1.8.3"
+    "tape": "^4.9.0"
   }
 }
 ```
 
 ## Managing dependencies with package.json
 
-As you can see, Tape v1.8.3 was installed in our project.
+As you can see, Tape v4.9.0 was installed in our project.
 
 The caret (^) at the front of the version number indicates that when installing, npm will pull in the highest version of the package it can find where the only the major version has to match (unless a package-lock.json file is present). In our case, that would be anything below v2.0.0.
 
@@ -233,6 +233,10 @@ Let's reinstall tape, however this time as a Dev Dependency! `npm i -D tape`
 
 You can read all about Tape here: [https://www.npmjs.com/package/tape](https://www.npmjs.com/package/tape)
 
+## Exercise 02
+
+You will now use tape to write some unit tests for the functions you've already created. Try to think of edge cases like negative numbers and multiplying/dividing by zero.
+
 ## Homework due 4/6
 
 ### Lowdasher ES6...with Testing!
@@ -240,9 +244,10 @@ You can read all about Tape here: [https://www.npmjs.com/package/tape](https://w
 Complete these functions for your Lowdasher (ES6) Refactor with Tests!
 
 1. Clone this repo
-2. Run `npm i` to install the dependencies
-3. Code
-4. Write tests! (**Hint: Look at the tests that were already made and add your own**)
+1. Run `npm i` to install the dependencies
+1. Take a look at the code that has already been done for you as examples
+1. Code
+1. Write tests! (**Hint: Look at the tests that were already made and add your own**)
 
 - identity
 - first
