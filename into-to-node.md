@@ -233,7 +233,16 @@ Let's reinstall tape, however this time as a Dev Dependency! `npm i -D tape`
 
 You can read all about Tape here: [https://www.npmjs.com/package/tape](https://www.npmjs.com/package/tape)
 
-## Lowdasher ES6...with Testing!
+## Homework due 4/6
+
+### Lowdasher ES6...with Testing!
+
+Complete these functions for your Lowdasher (ES6) Refactor with Tests!
+
+1. Clone this repo
+2. Run `npm i` to install the dependencies
+3. Code
+4. Write tests! (**Hint: Look at the tests that were already made and add your own**)
 
 - identity
 - first
@@ -245,7 +254,4 @@ You can read all about Tape here: [https://www.npmjs.com/package/tape](https://w
 - uniq
 - map
 
-## Homework due 4/6
-
-- Complete these functions for your Lowdasher (ES6) Refactor with Tests!
-- **BONUS** Convert the rest of Lowdasher to ES6 using Node.
+**BONUS** Convert the rest of Lowdasher (Part 2) to ES6 using Node.
