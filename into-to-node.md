@@ -120,11 +120,20 @@ The following table lists some of the important core modules in Node.js.
 
 Core modules do not need a path to be required. You can just use the name directly like this: `require('http')`
 
-## Exercise 01 - Simple Math
+## Exercise 01 - Arithmetic.js
 
-Download and complete the exercise called simple-math.
+Now we're going to create a simple Arithemtic library.
 
-See the README for instructions
+Go to this repo here and clone it down.
+
+See the README for instructions on how to begin.
+
+You will implementing
+
+- Add
+- Subtract
+- Divide
+- Multiply
 
 ## npm
 
@@ -239,11 +248,50 @@ Let's reinstall tape, however this time as a Dev Dependency! `npm i -D tape`
 
 You can read all about Tape here: [https://www.npmjs.com/package/tape](https://www.npmjs.com/package/tape)
 
+## How to write tests with Tape
+
+## Let's add tests for Arithmetic.js
+
 ## Exercise 02
 
-You will now use tape to write some unit tests for the functions you've already created. Try to think of edge cases like negative numbers and multiplying/dividing by zero.
+Let's add more functionality to Arthmetic.js.
+
+Add the following functions and try not to use any built in Math methods that javascript has already:
+
+Use tape to write some unit tests for each of the functions (including the one's you've already finished).
+
+```
+abs (absolute value)
+square
+cube
+power
+minimum (any or an array of numbers)
+maximum (any or an array of numbers)
+mean
+median
+```
+
+Every function should have at least 3 assertions. Your files should follow this formatting:
+
+```
+arithmetic
+  |- package.json
+  |- index.js
+  |- /functions
+    |- /add
+      |- add.js
+      |- add.spec.js
+    |- /subtract
+    |- /subtract.spec.js
+```
+
+Try to think of edge cases like negative numbers, multiplying/dividing by zero, and when the user provides too few arguments.
 
 ## Homework due 4/6
+
+### Finish Arithmetic.js
+
+Complete your Arithmetic library if you were not able to in class.
 
 ### Lowdasher ES6...with Testing!
 
@@ -265,4 +313,6 @@ Complete these functions for your Lowdasher (ES6) Refactor with Tests!
 - uniq
 - map
 
-**BONUS** Convert the rest of Lowdasher (Part 2) to ES6 using Node.
+### Bonus
+
+Convert the rest of Lowdasher (Part 2) to ES6 using Node.
