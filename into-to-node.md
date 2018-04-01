@@ -13,7 +13,7 @@ Just like how the browser adds functionality to JavaScript like the DOM and even
 1. A lot of people already know JavaScript. It is arguably the most popular programming language and the defacto language of the Web.
 1. Using JavaScript on a web server as well as the browser reduces the impedance mismatch between the two programming environments which can communicate data structures via JSON that work the same on both sides of the equation.
 
-## Versioning
+## Node Versions
 
 While Node is still using JavaScript under the hood, it implements things JavaScript cannot do using C++ (reading files, streams, deal with HTTP requests). Also the engine that is powering Node is V8 (Google's JS engine that powers Chrome).
 
@@ -21,7 +21,7 @@ Eventhough ES6 has been released, it can only be used in certain versions of Nod
 
 To see the version of node you have running type `node --version` or `node -v`
 
-## Using node
+## Using Node
 
 In your terminal you can access the Node REPL and use it by typing `node` and hitting ENTER.
 
@@ -130,9 +130,13 @@ See the README for instructions
 
 ### What is it?
 
+npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js. It automatically comes bundled with Node.
+
 [Intro to NPM Video](https://www.youtube.com/watch?v=x03fjb2VlGY)
 
 ### Why is it a thing?
+
+It allows people to use and distribute reusable bundles of code! An alternative is [Yarn](https://yarnpkg.com/en/) which is written and maintained by Facebook.
 
 ### Installing a Package
 
@@ -149,9 +153,11 @@ We can use an npm package called `n` (just the letter n) to help us keep track o
 
 Let's install it globally so we can use the `n` command anywhere: `npm i -g n`
 
+[https://www.npmjs.com/package/n](https://www.npmjs.com/package/n)
+
 ## package.json
 
-When you install packages locally, you normally do so using a package.json file. Let’s go ahead and create one.
+When you install packages locally, you normally do so using a package.json file. Let’s go ahead and create one for our Simple Math library.
 
 ```
 $ npm init
