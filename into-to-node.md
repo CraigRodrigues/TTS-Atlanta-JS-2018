@@ -130,10 +130,18 @@ See the README for instructions on how to begin.
 
 You will be implementing:
 
-- Add
-- Subtract
-- Divide
-- Multiply
+### Add
+
+- Adds two more values: `add(2, 3, 4, 5)` returns `19`
+- Adds an array of values: `add([1, 5, 10]` return `16`
+- Adds a single value to every item in an array and returns a NEW array
+    - `add([1, 2, 3], 10)` return `[11, 12, 13]`
+
+### Subtract
+
+### Divide
+
+### Multiply
 
 ## Assert in Node
 
@@ -315,7 +323,7 @@ mean
 median
 ```
 
-Every function should have at least 3 assertions. Your files should follow this formatting:
+Every function should have at least 5 tests, enough to cover all major uses you can think of. Your files should follow this formatting:
 
 ```
 arithmetic-library
