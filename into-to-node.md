@@ -124,11 +124,9 @@ Core modules do not need a path to be required. You can just use the name direct
 
 Now we're going to create a simple Arithemtic library.
 
-Go to this repo here and clone it down.
-
-See the README for instructions on how to begin.
-
-You will be implementing:
+1. Go to this repo here and clone it down.
+1. See the README for instructions on how to begin.
+1. You will be implementing the following four functions to start:
 
 ### Add
 
