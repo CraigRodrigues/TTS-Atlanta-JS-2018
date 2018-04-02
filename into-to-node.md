@@ -132,10 +132,16 @@ You will be implementing:
 
 ### Add
 
-- Adds two more values: `add(2, 3, 4, 5)` returns `19`
-- Adds an array of values: `add([1, 5, 10]` return `16`
-- Adds a single value to every item in an array and returns a NEW array
-    - `add([1, 2, 3], 10)` return `[11, 12, 13]`
+It should
+- Adds two more values
+- Adds an array of values
+- Adds a single value to every item in an array and returns a **NEW array**
+
+```javascript
+add(2, 3, 4, 5) //19
+add([1, 5, 10]) //16
+add([1, 2, 3], 10) //[11, 12, 13]
+```
 
 ### Subtract
 
