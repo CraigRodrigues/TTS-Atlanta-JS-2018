@@ -143,14 +143,6 @@ You will be implementing:
 
 ### Multiply
 
-## Assert in Node
-
-Notice how we are using a Node core module called assert to make sure our tests are correct.
-
-See the documentation page about it here: [https://nodejs.org/api/assert.html](https://nodejs.org/api/assert.html)
-
-We will be using a more robust package later on!
-
 ## npm
 
 ### What is it?
@@ -216,6 +208,8 @@ Press Enter to accept the defaults, then type yes to confirm. This will create a
 **If you want a quicker way to generate a package.json file use `npm init --y`**
 
 The main field is the primary entry point to your program and the scripts field lets you specify script commands that are run at various times. We will go further into npm scripts a little bit later.
+
+## Installing a package/dependency
 
 Now let’s try and install Tape.
 
@@ -326,15 +320,15 @@ median
 Every function should have at least 5 tests, enough to cover all major uses you can think of. Your files should follow this formatting:
 
 ```
-arithmetic-library
-  |- package.json
-  |- index.js
-  |- /functions
-      |- add.js
-      |- subtract.js
-  |- /tests
-    |- add.spec.js
-    |- subtract.spec.js
+    arithmetic-library
+  ├── package.json
+  ├── index.js
+  ├── functions
+      └── add.js
+      └── subtract.js
+  ├── tests
+      └── add.spec.js
+      └── subtract.spec.js
 ```
 
 Try to think of edge cases like negative numbers, multiplying/dividing by zero, and when the user provides too few arguments.
