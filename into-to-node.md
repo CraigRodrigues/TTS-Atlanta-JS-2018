@@ -128,12 +128,20 @@ Go to this repo here and clone it down.
 
 See the README for instructions on how to begin.
 
-You will implementing
+You will be implementing:
 
 - Add
 - Subtract
 - Divide
 - Multiply
+
+## Assert in Node
+
+Notice how we are using a Node core module called assert to make sure our tests are correct.
+
+See the documentation page about it here: [https://nodejs.org/api/assert.html](https://nodejs.org/api/assert.html)
+
+We will be using a more robust package later on!
 
 ## npm
 
@@ -166,18 +174,18 @@ Let's install it globally so we can use the `n` command anywhere: `npm i -g n`
 
 ## package.json
 
-When you install packages locally, you normally do so using a package.json file. Let’s go ahead and create one for our Simple Math library.
+When you install packages locally, you normally do so using a package.json file. Let’s go ahead and create one for our Arithmetic.js library.
 
 ```
 $ npm init
-package name: simple math
+package name: arithmetic.js
 version: (1.0.0)
 description: Super simple math functions
 entry point: index.js
 test command:
 git repository:
 keywords:
-author:
+author: Craig Rodrigues
 license: (ISC)
 ```
 
@@ -185,14 +193,14 @@ Press Enter to accept the defaults, then type yes to confirm. This will create a
 
 ```JSON
 {
-  "name": "simple math",
+  "name": "arithmetic.js",
   "version": "1.0.0",
-  "description": "Super simple math functions",
+  "description": "simple math functions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Craig Rodrigues",
   "license": "ISC"
 }
 ```
@@ -203,7 +211,7 @@ The main field is the primary entry point to your program and the scripts field 
 
 Now let’s try and install Tape.
 
-`npm install Tape`
+`npm install tape`
 
 Now if we have a look in `package.json` we will see that a dependencies field has been added:
 
@@ -231,6 +239,12 @@ It would also be possible to save a package as a devDependency by specifying a -
 By far and away the biggest reason for using package.json to specify a project’s dependencies is **portability**.
 
 For example, when you clone someone else’s code, all you have to do is run `npm i` in the project root and npm will resolve and fetch all of the necessary packages for you to run the app.
+
+## Package-lock.json
+
+Introduced in npm 5, the purpose of this file is to ensure that the dependencies remain the same on all machines the project is installed on. It is automatically generated for any operations where npm modifies either the node_modules folder, or package.json file.
+
+For detailed info go here: [https://docs.npmjs.com/files/package-lock.json](https://docs.npmjs.com/files/package-lock.json)
 
 ## Uninstalling a Package
 
@@ -295,23 +309,24 @@ Complete your Arithmetic library if you were not able to in class.
 
 ### Lowdasher ES6...with Testing!
 
-Complete these functions for your Lowdasher (ES6) Refactor with Tests!
+Create a brand new Lowdasher repo, but this time using Node, ES6 and Tape
 
-1. Clone this repo
-1. Run `npm i` to install the dependencies
-1. Take a look at the code that has already been done for you as examples
-1. Code
-1. Write tests! (**Hint: Look at the tests that were already made and add your own**)
-
-- identity
-- first
-- last
-- each
-- indexof
-- filter
-- reject
-- uniq
-- map
+1. Create your folder called lowdasher-es6
+1. Run `npm init` on it
+1. Add the tape package via `npm i -D tape` (dev dependecy)
+1. Write the code for these functions from Part 1:
+    - identity
+    - first
+    - last
+    - each
+    - indexof
+    - filter
+    - reject
+    - uniq
+    - map
+1. Split up the code into files for each function similar to Arithmetic.js
+1. Look back at your original Lowdasher repo and copy/paste/refactor it
+1. Write tests! (**If you need testing inspiration, look at the tests from the original repo**)
 
 ### Bonus
 
