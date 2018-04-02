@@ -280,7 +280,7 @@ You can read all about Tape here: [https://www.npmjs.com/package/tape](https://w
 
 ## How to run your tests
 
-`tape tests/**/*.js`
+`tape tests/*.spec.js`
 
 ## Using npm scripts to run your tests
 
@@ -288,7 +288,7 @@ Under the scripts property in your `package.json` add in the command to run tape
 
 ```JSON
 "scripts": {
-    "test": "tape tests/*.js"
+    "test": "tape tests/*.spec.js"
   },
 ```
 
