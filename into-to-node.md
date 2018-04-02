@@ -260,19 +260,49 @@ npm is a package manager so it must be able to remove a package.
 
 Let's reinstall tape, however this time as a Dev Dependency! `npm i -D tape`
 
+devDependencies are packages used for development purposes, for example for running tests or transpiling code.
+
 You can read all about Tape here: [https://www.npmjs.com/package/tape](https://www.npmjs.com/package/tape)
 
 ## How to write tests with Tape
 
-## Let's add tests for Arithmetic.js
+```javascript
+  const test = require('tape');
 
-## Exercise 02
+  test('It should add 2 numbers', (t) => {
+      let actual = add(2, 4);
+      let expected = 6;
+
+      t.equal(actual, expected);
+      t.end();
+  });
+```
+
+## How to run your tests
+
+`tape tests/**/*.js`
+
+## Using npm scripts to run your tests
+
+Under the scripts property in your `package.json` add in the command to run tape tests.
+
+```JSON
+"scripts": {
+    "test": "tape tests/*.js"
+  },
+```
+
+Now we can run our tests by just typing `npm test` or `npm t`
+
+## Exercise 02: Let's add tests for Arithmetic.js
 
 Let's add more functionality to Arthmetic.js.
 
 Add the following functions and try not to use any built in Math methods that javascript has already:
 
 Use tape to write some unit tests for each of the functions (including the one's you've already finished).
+
+If you get stuck [reference the documentation](https://github.com/substack/tape).
 
 ```
 abs (absolute value)
@@ -288,15 +318,15 @@ median
 Every function should have at least 3 assertions. Your files should follow this formatting:
 
 ```
-arithmetic
+arithmetic-library
   |- package.json
   |- index.js
   |- /functions
-    |- /add
       |- add.js
-      |- add.spec.js
-    |- /subtract
-    |- /subtract.spec.js
+      |- subtract.js
+  |- /tests
+    |- add.spec.js
+    |- subtract.spec.js
 ```
 
 Try to think of edge cases like negative numbers, multiplying/dividing by zero, and when the user provides too few arguments.
@@ -305,9 +335,9 @@ Try to think of edge cases like negative numbers, multiplying/dividing by zero, 
 
 ### Finish Arithmetic.js
 
-Complete your Arithmetic library if you were not able to in class.
+Complete your Arithmetic.js library with tests.
 
-### Lowdasher ES6...with Testing!
+### Bonus 01: Lowdasher ES6...with Testing
 
 Create a brand new Lowdasher repo, but this time using Node, ES6 and Tape
 
@@ -328,6 +358,4 @@ Create a brand new Lowdasher repo, but this time using Node, ES6 and Tape
 1. Look back at your original Lowdasher repo and copy/paste/refactor it
 1. Write tests! (**If you need testing inspiration, look at the tests from the original repo**)
 
-### Bonus
-
-Convert the rest of Lowdasher (Part 2) to ES6 using Node.
+### Bonus 02: Convert the rest of Lowdasher (Part 2) to ES6 using Node
