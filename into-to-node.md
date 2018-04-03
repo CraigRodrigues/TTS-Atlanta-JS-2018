@@ -260,13 +260,13 @@ Now if we have a look in `package.json` we will see that a dependencies field ha
 
 As you can see, Tape v4.9.0 was installed in our project.
 
-The caret (^) at the front of the version number indicates that when installing, npm will pull in the highest version of the package it can find where the only the major version has to match (unless a package-lock.json file is present). In our case, that would be anything below v2.0.0.
+The caret (^) at the front of the version number indicates that when installing, npm will pull in the highest version of the package it can find where the only the major version has to match (unless a package-lock.json file is present). In our case, that would be anything below v4.0.0.
 
 This method of versioning dependencies (major.minor.patch) is known as semantic versioning. You can read more about it here: [Semantic Versioning: Why You Should Be Using it.](https://www.sitepoint.com/semantic-versioning-why-you-should-using/)
 
 Also notice that Tape was saved as a property of the dependencies field. This has become the default in the latest version of npm and is used for packages required for the application to run.
 
-It would also be possible to save a package as a devDependency by specifying a -D flag. devDependencies are packages used for development purposes, for example for running tests (with Tape) or transpiling code.
+It would also be possible to save a package as a devDependency by specifying a `-D` flag. devDependencies are packages used for development purposes, for example for running tests (with Tape) or transpiling code.
 
 By far and away the biggest reason for using package.json to specify a project’s dependencies is **portability**.
 
@@ -307,6 +307,22 @@ You can read all about Tape here: [https://www.npmjs.com/package/tape](https://w
 
       t.equal(actual, expected);
       t.end();
+  });
+```
+
+Notice `t.end()`. This is required so tape knows when a test is complete.
+
+Another alternative to using `t.end` is to use `t.plan(n)`. Declare that n assertions should be run. t.end() will be called automatically after the nth assertion. If there are any more assertions after the nth, or after t.end() is called, they will generate errors.
+
+```javascript
+  const test = require('tape');
+
+  test('It should add 2 numbers', (t) => {
+      let actual = add(2, 4);
+      let expected = 6;
+
+      t.plan(1);
+      t.equal(actual, expected);
   });
 ```
 
