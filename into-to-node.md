@@ -332,22 +332,13 @@ Let's add more functionality to Arthmetic.js.
 
 Add the following functions and try not to use any built in Math methods that javascript has already:
 
-Use tape to write some unit tests for each of the functions (including the one's you've already finished).
+Use tape to write some unit tests for each of the functions (including the one's you've already finished). Every function should have at least 5 tests, enough to cover all major uses you can think of. Try to think of edge cases like negative numbers, multiplying/dividing by zero, and when the user provides too few arguments.
 
-If you get stuck with tape [reference the documentation](https://github.com/substack/tape).
+**Don't forget to avoid using native JavScript methods!**
 
-```
-abs (absolute value)
-square
-cube
-power
-minimum (any or an array of numbers)
-maximum (any or an array of numbers)
-mean
-median
-```
+_If you get stuck with tape [reference the documentation](https://github.com/substack/tape)._
 
-Every function should have at least 5 tests, enough to cover all major uses you can think of. Your files should follow this formatting:
+### Here is what your files should look like
 
 ```
     arithmetic-library
@@ -361,7 +352,41 @@ Every function should have at least 5 tests, enough to cover all major uses you 
       └── subtract.spec.js
 ```
 
-Try to think of edge cases like negative numbers, multiplying/dividing by zero, and when the user provides too few arguments.
+### Abs
+
+Returns the absolute value of a single number or returns the absolute value as an array for every value in an array of numbers
+
+### Square
+
+Squares a single value or an array of values
+
+### Cube
+
+Cubes a value of an array of values
+
+### Power
+
+Takes a value and exponent or an array of values and a single exponent
+
+### Minimum
+
+Returns the minimum value from one or more numbers or the minimum from an array of values
+
+### Maximum
+
+Returns the maximum value from one or more numbers or the minimum from an array of values
+
+### Mean
+
+Returns the average value from one or more numbers or from an array of values
+
+### Median
+
+Compute the median from any amount of numbers or an array of numbers. In case of an even number of values, the average of the two middle values is returned.
+
+### Mode
+
+Computes the mode of a any amount of numbers or an array of numbers. If there is more than one mode, it returns an array of those values.
 
 ## Homework due 4/6
 
@@ -369,25 +394,6 @@ Try to think of edge cases like negative numbers, multiplying/dividing by zero, 
 
 Complete your Arithmetic.js library with tests.
 
-### Bonus 01: Lowdasher ES6...with Testing
+### Watch this overview video
 
-Create a brand new Lowdasher repo, but this time using Node, ES6 and Tape
-
-1. Create your folder called lowdasher-es6
-1. Run `npm init` on it
-1. Add the tape package via `npm i -D tape` (dev dependecy)
-1. Write the code for these functions from Part 1:
-    - identity
-    - first
-    - last
-    - each
-    - indexof
-    - filter
-    - reject
-    - uniq
-    - map
-1. Split up the code into files for each function similar to Arithmetic.js
-1. Look back at your original Lowdasher repo and copy/paste/refactor it
-1. Write tests! (**If you need testing inspiration, look at the tests from the original repo**)
-
-### Bonus 02: Convert the rest of Lowdasher (Part 2) to ES6 using Node
+[What Is React?](https://www.youtube.com/watch?v=0KlRgFEEz0g) [https://www.youtube.com/watch?v=0KlRgFEEz0g](https://www.youtube.com/watch?v=0KlRgFEEz0g)
