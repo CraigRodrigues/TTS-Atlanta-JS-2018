@@ -164,7 +164,7 @@ divide([1, 2, 3], 3)  // returns array [0.3333333333333333, 0.6666666666666666, 
 
 ### Multiply
 
-- Adds two or more values
+- Multiples two or more values
 - Generates the product of single array of values
 - Takes an array and a value and multiplies that value by every item in the array and returns a **NEW array** (does not mutate)
 
