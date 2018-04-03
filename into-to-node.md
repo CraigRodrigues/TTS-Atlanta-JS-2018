@@ -334,7 +334,7 @@ Add the following functions and try not to use any built in Math methods that ja
 
 Use tape to write some unit tests for each of the functions (including the one's you've already finished).
 
-If you get stuck [reference the documentation](https://github.com/substack/tape).
+If you get stuck with tape [reference the documentation](https://github.com/substack/tape).
 
 ```
 abs (absolute value)
