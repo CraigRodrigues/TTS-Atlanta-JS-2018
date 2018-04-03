@@ -249,7 +249,7 @@ Now let’s try and install Tape.
 
 Now if we have a look in `package.json` we will see that a dependencies field has been added:
 
-```
+```JSON
 {
   ...
   "dependencies": {
