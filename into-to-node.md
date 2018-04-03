@@ -410,6 +410,6 @@ Computes the mode of a any amount of numbers or an array of numbers. If there is
 
 Complete your Arithmetic.js library with tests.
 
-### Watch this overview video
+### Watch this short video on React
 
 [What Is React?](https://www.youtube.com/watch?v=0KlRgFEEz0g) [https://www.youtube.com/watch?v=0KlRgFEEz0g](https://www.youtube.com/watch?v=0KlRgFEEz0g)
