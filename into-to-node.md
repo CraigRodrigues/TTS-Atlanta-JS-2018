@@ -73,6 +73,8 @@ export { add };
 
 In Node all your exports are just properties on the `module.exports` object. Just add to it to export properly!
 
+_note: You can export using `exports`, but here is an explaination on how that works and why it's best to stick with `module.exports`: [https://stackoverflow.com/a/16383925](https://stackoverflow.com/a/16383925)_
+
 ### Importing a module
 
 #### Node
