@@ -222,6 +222,8 @@ setInterval(tick, 1000);
 
 ## Functional Components
 
+The easiest way to define a component is write a simple JS function:
+
 ```javascript
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
@@ -276,3 +278,19 @@ ReactDOM.render(
     1. React DOM efficiently updates the DOM to match `<h1>Hello, Craig</h1>`. **Note: Always start component names with a capital letter.**
     1. React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires Welcome to be in scope.
     1. Think of a capital JSX tag as invoking a new constructor function: `new Welcome({name: 'Craig'})`
+
+## Exercise - Grocery List Revisisted
+
+* Let's revisit the grocery list you made earlier.
+* Let's try and make that grocery list using a component!
+* Create a functional component called `GroceryListItem` and give it some props
+* The prop that your function should take is just the name of the item
+* Make your App function create the list again, but this time by just using custom components instead of `<li>` React elements
+
+## Extracting Components
+
+* We can always split components into even smaller components
+* Let's consider this example that should be familiar from our Youtube app
+
+```javascript
+```
