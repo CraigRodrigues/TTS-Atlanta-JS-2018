@@ -148,10 +148,9 @@ ReactDOM.render(
 ```
 
 * So what is happening above?
-
-1. We call `ReactDOM.render()` with the `<Welcome name="Craig" />` element.
-1. React calls the Welcome component with `{name: 'Craig'}` as the props.
-1. Our Welcome component returns a `<h1>Hello, Craig</h1>` element as the result.
-1. React DOM efficiently updates the DOM to match `<h1>Hello, Craig</h1>`. **Note: Always start component names with a capital letter.**
-1. React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires Welcome to be in scope.
-1. Think of a capital JSX tag as invoking a new constructor function: `new Welcome({name: 'Craig'})`
+    1. We call `ReactDOM.render()` with the `<Welcome name="Craig" />` element.
+    1. React calls the Welcome component with `{name: 'Craig'}` as the props.
+    1. Our Welcome component returns a `<h1>Hello, Craig</h1>` element as the result.
+    1. React DOM efficiently updates the DOM to match `<h1>Hello, Craig</h1>`. **Note: Always start component names with a capital letter.**
+    1. React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires Welcome to be in scope.
+    1. Think of a capital JSX tag as invoking a new constructor function: `new Welcome({name: 'Craig'})`
