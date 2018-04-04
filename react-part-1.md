@@ -29,7 +29,7 @@
 
 ## Add to webpack.config.js
 
-**Don't forget to load css-loader and style-loader if you're going to be using CSS in your files**
+We need a separate rule to handle our `js` and `jsx` files. This is different than the rules that handle css files!
 
 ```javascript
 module: {
