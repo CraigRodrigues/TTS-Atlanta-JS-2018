@@ -34,6 +34,8 @@ module.exports = {
 };
 ```
 
+* or `webpack --mode development` and `webpack --mode production`
+
 ## Bundling Our Youtube App
 
 * Create a new branch called "webpack"
