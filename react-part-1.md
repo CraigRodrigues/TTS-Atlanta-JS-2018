@@ -75,23 +75,145 @@ Congratulations you've created your first React application 🎉
 
 ## JSX
 
+`const element = <h1>Hello, world!</h1>;`
+
+* This is not HTML nor a string...it's JSX!
+* JSX is a syntax extension of Javascript
+* JSX produces React "elements"
+* React does not require JSX, but it is incredibly useful
+
 ## Embedding Expressions in JSX
+
+* JSX is similar to ES6 Template Literals which we covered earlier
+* You can embed any JS expression in JSX by wrapping it in curly braces
+* Below `3 + 3`, `user.firstname` or `formatName(user)` is all valid
+* It is recommended you wrap JSX in parenthesis to avoid JS automatic semicolon insertion
+
+```javascript
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Harper',
+  lastName: 'Perez'
+};
+
+const element = (
+  <h1>Hello, {formatName(user)}!</h1>
+);
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
+* You can also use JSX inside of `if` and `for` loops.
+
+```javascript
+function getGreeting(user) {
+    if (user) {
+        return <h1>Hello, {formatName(user)}!</h1>;
+    }
+
+    return <h1>Hello, Stranger.</h1>;
+}
+```
 
 ## Attributes
 
+* To put attribute into your HTML you can use string as literals
+
+`const element = <div tabIndex="0"></div>`
+
+* Or you may use curly braces to put in a JS expression
+
+`const element = <img src={user.avatarURL}></img>`
+
+* Don't put any quotes around the JS curly brace expression
+* Since JSX is closer to JavaScript than to HTML, React DOM uses camelCase property naming convention instead of HTML attribute names. **For example, class becomes className in JSX, and tabindex becomes tabIndex.**
+
 ## Children
 
-## JSX Under the Hood
+* If a JSX tag is empty you can close it immediately with `/>`
+* `const element = <img src={user.avatarURL} />`
+* JSX tags may also contain children!
+
+```javascript
+    const element = (
+        <div>
+            <h1>Hello!</h1>
+            <h2>Good to see you here.</h2>
+        </div>
+    );
+```
 
 ## Exercise 02 - Grocery List
 
+* Create a function component with JSX that will render this grocery list to the screen
+
+```text
+My Grocery List
+
+1. Eggs
+2. Bacon
+3. Cheese
+4. Biscuits
+```
+
 ## React Elements
+
+* Elements are the smallest building blocks of React apps.
+* An element describes what you want to see on the screen: `const element = <h1>Hello, world</h1>;`
+* Unlike browser DOM elements, React elements are **plain objects**, and are cheap to create.
+* React DOM takes care of updating the DOM to match the React elements.
 
 ## Rendering Elements
 
+* The root DOM node is where everything that React DOM manages will live.
+* Usually React apps have a single root DOM node.
+* `ReactDOM.render` takes in an element and then the root element.
+
+```javascript
+// in our HTML
+// <div id="root"></div>
+
+const element = <h1>Hello, world</h1>;
+
+ReactDOM.render(element, document.getElementById('root'));
+```
+
 ## Updating the Rendered Element
 
+* React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
+* With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `ReactDOM.render()`.
+
+Let's try this ticking clock example:
+
+```javascript
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+
+  ReactDOM.render(element, document.getElementById('root'));
+}
+
+setInterval(tick, 1000);
+```
+
+* It calls ReactDOM.render() every second from a setInterval() callback.
+* NOTE: In practice, most React apps only call `ReactDOM.render()` once. Next time we will learn how such code gets encapsulated into "stateful components".
+
 ## React Only Updates Exactly What Is Necessary
+
+* React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+* Let's take a look using the Dev Tools.
+* Even though we create an element describing the whole UI tree on every tick, only the text node whose contents has changed gets updated by React DOM.
 
 ## Components and Props
 
