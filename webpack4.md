@@ -28,23 +28,40 @@
     ```
 
 ## Bundling Our Youtube App
-    * Init repo
-    * Install webpack and webpack-cli
-    * Create a dist folder
+    * Create a new branch called "webpack"
+    * Install webpack and webpack-cli: `npm install -D webpack webpack-cli`
+    * We'll tweak our directory structure slightly, separating the "source" code (/src) from our "distribution" code (/dist). The "source" code is the code that we'll write and edit. The "distribution" code is the minimized and optimized output of our build process that will eventually be loaded in the browser.
+
+    * Create a dist folder and put our index.html in it
     * Change our index.html to point to bundle.js inside list instead of app.js
     * Run “npx webpack”
     * Open index.html and it should work just fine again
-    * Take a look at the bundle!
+    * Take a minute to look at the bundled code!
+
 ## Webpack Modules
     * How webpack transpiles import/export code
-    * Other ways to do “modules”
+    * Other ways to do “modules” (Node, ES6 Modules, CommonJS)
+
 ## Using a Configuration File
     * Create webpack.config.js
-    * Input all the code to have the output create a bundle.js file in dis
-    * Run npx webpack —config webpack.config.js
-        * Note that npx webpack will automatically use the webpack.config.js file
+    * Input all the code to have the output create a bundle.js file in dist
+
+    ```javascript
+    const path = require('path');
+
+    module.exports = {
+        entry: './src/index.js',
+        output: {
+            filename: 'bundle.js',
+            path: path.resolve(__dirname, 'dist')
+        }
+    };
+    ```
+
+    * Run npx webpack —config webpack.config.js (Note that npx webpack will automatically use the webpack.config.js file)
     * Let’s add an npm script to run webpack
-    * npm run build (“build”: “webpack”)
+    * `npm run build` (“build”: “webpack”)
+
 ## Asset Management
     * Loading CSS
     * NPM install style-loader and css-loader
