@@ -3,29 +3,30 @@
 ## What is Webpack
 
 ## How Webpack works
-    * Entry
 
-    An entry point indicates which module webpack should use to begin building out its internal dependency graph. After entering the entry point, webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+### Entry
 
-    * Output
+An entry point indicates which module webpack should use to begin building out its internal dependency graph. After entering the entry point, webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 
-    The output property tells webpack where to emit the bundles it creates and how to name these files, it defaults to ./dist.
+### Output
 
+The output property tells webpack where to emit the bundles it creates and how to name these files, it defaults to ./dist.
 
-    * Loaders and Plugins
+### Loaders and Plugins
 
-    Loaders enable webpack to process more than just JavaScript files (webpack itself only understands JavaScript. They give you the ability to leverage webpack's bundling capabilities for all kinds of files by converting them to valid modules that webpack can process.
+Loaders enable webpack to process more than just JavaScript files (webpack itself only understands JavaScript. They give you the ability to leverage webpack's bundling capabilities for all kinds of files by converting them to valid modules that webpack can process.
 
-    While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks. Plugins range from bundle optimization and minification all the way to defining environment-like variables. The plugin interface is extremely powerful and can be used to tackle a wide variety of tasks.
+While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks. Plugins range from bundle optimization and minification all the way to defining environment-like variables. The plugin interface is extremely powerful and can be used to tackle a wide variety of tasks.
 
-    * Mode
-    By setting the mode parameter to either development or production, you can enable webpack's built-in optimizations that correspond with the selected mode.
+### Mode
 
-    ```javascript
-    module.exports = {
-        mode: 'production'
-    };
-    ```
+By setting the mode parameter to either development or production, you can enable webpack's built-in optimizations that correspond with the selected mode.
+
+```javascript
+module.exports = {
+    mode: 'production'
+};
+```
 
 ## Bundling Our Youtube App
     * Create a new branch called "webpack"
