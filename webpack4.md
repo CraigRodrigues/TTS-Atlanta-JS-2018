@@ -122,9 +122,7 @@ plugins: [
 
 [https://webpack.js.org/guides/development/#using-source-maps](https://webpack.js.org/guides/development/#using-source-maps)
 
-## Webpack —watch and Webpack Dev Server
-
-### Watch
+## Watch
 
 > You can instruct webpack to "watch" all files within your dependency graph for changes. If one of these files is updated, the code will be recompiled so you don't have to run the full build manually.
 
@@ -132,4 +130,35 @@ plugins: [
 
 * You can now run `npm run watch` from the command line to see that webpack compiles your code, but doesn't exit to the command line. This is because the script is still watching your files.
 
+## Webpack Dev Server
+
+* The webpack-dev-server provides you with a simple web server and the ability to use live reloading. Let's set it up:
+
+* `npm install -D webpack-dev-server`
+
+* Change your config file to tell the dev server where to look for files:
+
+```javascript
+    entry: './src/index.js',
+    mode: 'development',
+    devServer: { contentBase: './dist' },
+```
+
+* This tells webpack-dev-server to serve the files from the `dist` directory on `localhost:8080`.
+
+* Let's also add an npm script to start our server
+
+```JSON
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+}
+```
+
+* Now we can run `npm start` from the command line and we will see our browser automatically loading up our page. If you now change any of the source files and save them, the web server will automatically reload after the code has been compiled.
+
 ## Uglify and Minify
+
+* If the mode is set to `production` webpack will automatically minify and uglify your code.
