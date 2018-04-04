@@ -367,3 +367,7 @@ const list = (
     </div>
 )
 ```
+
+## Props are Read-Only
+
+Be sure to read this! [https://reactjs.org/docs/components-and-props.html#props-are-read-only](https://reactjs.org/docs/components-and-props.html#props-are-read-only)
