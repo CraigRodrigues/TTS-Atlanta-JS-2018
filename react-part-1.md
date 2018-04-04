@@ -290,7 +290,61 @@ ReactDOM.render(
 ## Extracting Components
 
 * We can always split components into even smaller components
-* Let's consider this example that should be familiar from our Youtube app
+* Let's try and make our grocery list a little better
+* We can create a  header for "Grocery List" it's own `<Header />` component as well
 
 ```javascript
+function GroceryHeader(props) {
+    return <h1>{props.title}</h1>;
+}
+
+function GroceryItem(props) {
+    return <li>{props.item}</li>;
+}
+
+const list = (
+    <div>
+        <GroceryHeader title="My Grocery List!" />
+        <ol>
+            <GroceryItem item="Eggs" />
+            <GroceryItem item="Bacon" />
+            <GroceryItem item="Cheese" />
+            <GroceryItem item="Biscuits" />
+        </ol>
+    </div>
+)
 ```
+
+* And then we can create a `GroceryList` component that will in turn render all of our grocery items!
+
+```javascript
+function GroceryHeader(props) {
+    return <h1>{props.title}</h1>;
+}
+
+function GroceryItem(props) {
+    return <li>{props.item}</li>;
+}
+
+function GroceryList() {
+    return (
+        <ol>
+            <GroceryItem item="Eggs" />
+            <GroceryItem item="Bacon" />
+            <GroceryItem item="Cheese" />
+            <GroceryItem item="Biscuits" />
+        </ol>
+    )
+}
+
+const list = (
+    <div>
+        <GroceryHeader title="My Grocery List!" />
+        <GroceryList />
+    </div>
+)
+```
+
+## Mapping Components
+
+* Now we will map an array to create our components!
