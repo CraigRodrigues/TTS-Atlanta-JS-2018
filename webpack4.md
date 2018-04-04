@@ -2,7 +2,7 @@
 
 ## What is Webpack
 
-## How Webpack works
+Webpack allows you to package dependencies into bundles that will be understood by browsers.
 
 ### Entry
 
