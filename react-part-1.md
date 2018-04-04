@@ -348,3 +348,22 @@ const list = (
 ## Mapping Components
 
 * Now we will map an array to create our components!
+
+```javascript
+function GroceryList() {
+    let list = ['Eggs', 'Bacon', 'Cheese', 'Biscuits'];
+
+    return (
+        <ol>
+            {list.map((item, i) => <GroceryItem key={i} item={item} />)}
+        </ol>
+    )
+}
+
+const list = (
+    <div>
+        <GroceryHeader title="My Grocery List!" />
+        <GroceryList />
+    </div>
+)
+```
