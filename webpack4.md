@@ -4,6 +4,8 @@
 
 Webpack allows you to package dependencies into bundles that will be understood by browsers.
 
+![Why Webpack](/images/webpack.png)
+
 ### Entry
 
 An entry point indicates which module webpack should use to begin building out its internal dependency graph. After entering the entry point, webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
