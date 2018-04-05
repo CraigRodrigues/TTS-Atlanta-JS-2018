@@ -240,7 +240,7 @@ class Welcome extends React.Component {
 }
 ```
 
-The above two components are equivalent from React’s point of view, however functional classes are faster than using the class syntax. We will return to talk about using classes in React later.
+The above two components are equivalent from React’s point of view, however functional components are faster than using the class syntax. We will return to talk about using classes in React later.
 
 ## User Defined Components
 
