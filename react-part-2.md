@@ -307,6 +307,14 @@ render() {
 
 * We can pass arguments to a bound function as normal. Just make sure it's bound in the constructor while creates a copy of the function!
 
+## Exercise - Up/Down
+
+![React Counter](/images/react-counter.png)
+
+1. Create a `Counter` class component that renders a number and two buttons `+` and `-` that can incremement or decrement the counter. Make it look like the screenshot above.
+1. Next change your App so it renders 4 `Counter` components to the page.
+1. Add a button that can reset the counter back to zero.
+
 ## Conditional Rendering
 
 Consider these two components:
