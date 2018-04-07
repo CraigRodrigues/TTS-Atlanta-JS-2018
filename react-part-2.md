@@ -207,3 +207,174 @@ function FormattedDate(props) {
 
 * This is commonly called a “top-down” or “unidirectional” data flow.
 * Any state is always owned by some specific component, and any data or UI derived from that state can only affect components “below” them in the tree.
+
+## Handling Events in React
+
+* Handling events in React is very similar to handling events on DOM elements
+* React events are named using camelCase rather than lowercase: `onclick vs onClick`
+* With JSX you pass a function as the event handler rather than a string
+
+```javascript
+// DOM
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
+
+// REACT
+<button onClick={activateLasers}>
+  Activate Lasers
+</button>
+```
+
+## Synthetic Events
+
+* Take a look at the following example. Here `e` is a synthetic event.
+
+```javascript
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+
+    console.log('The link was clicked.');
+  }
+
+  return (
+    <a href="#" onClick={handleClick}>
+      Click me
+    </a>
+  );
+}
+```
+
+* React handles synethic events and with them you don't need to worry about cross-browser compatability.
+* When using React you should generally not need to call `addEventListener` to add listeners to a DOM element after it is created. **Instead, just provide a listener when the element is initially rendered.**
+
+```javascript
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+* You have to be careful with `this` and the context of a function. If not bound `this` will be undefined.
+* Can you think of another way to do this without using bind?
+
+```javascript
+render() {
+    // This syntax ensures `this` is bound within handleClick
+    // Arrow function in the callback
+    return (
+      <button onClick={(e) => this.handleClick(e)}>
+        Click me
+      </button>
+    );
+  }
+```
+
+* **The problem here is that a different callback is created each time this Component renders.**
+* In most cases, this is fine. However, if this callback is passed as a prop to lower components, those components might do an extra re-rendering.
+* React generally recommend binding in the constructor or using the class fields syntax, to avoid this sort of performance problem.
+
+## Passing arguments to Event Handlers
+
+```javascript
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+```
+
+* We can pass arguments to a bound function as normal. Just make sure it's bound in the constructor while creates a copy of the function!
+
+## Conditional Rendering
+
+Consider these two components:
+
+```javascript
+
+function UserGreeting(props) {
+  return <h1>Welcome back!</h1>;
+}
+
+function GuestGreeting(props) {
+  return <h1>Please sign up.</h1>;
+}
+
+```
+
+* We’ll create a Greeting component that displays either of these components depending on whether a user is logged in:
+
+```javascript
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+```
+
+## Keys
+
+* Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+
+* The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. Most often you would use IDs from your data as keys:
+
+```javascript
+const todoItems = todos.map((todo) =>
+  <li key={todo.id}>
+    {todo.text}
+  </li>
+);
+```
+
+* When you don’t have stable IDs for rendered items, you may use the item index as a key as a **last resort**:
+
+```javascript
+const todoItems = todos.map((todo, index) =>
+  // Only do this if items have no stable IDs
+  <li key={index}>
+    {todo.text}
+  </li>
+);
+```
+
+* Keys must only be unique among siblings. They do not need otbe globally unique.
+
+## Lifting State Up
