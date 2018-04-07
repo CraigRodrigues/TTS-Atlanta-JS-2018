@@ -54,7 +54,7 @@ React is a JavaScript library for building user interfaces. It focuses on small,
 
 ## Exercise 01 - Hello World
 
-1. Clone down the React Starter Repo
+1. Clone down the [React Part 1 Repo](https://github.com/CraigRodrigues/react-part-1)
 1. Run `npm i` to install the dependencies
 1. In `index.js` put in the following code:
 
@@ -240,7 +240,7 @@ class Welcome extends React.Component {
 }
 ```
 
-The above two components are equivalent from React’s point of view. We will return to talk about using classes in React later.
+The above two components are equivalent from React’s point of view, however functional components are faster than using the class syntax. We will return to talk about using classes in React later.
 
 ## User Defined Components
 
