@@ -83,5 +83,127 @@ ReactDOM.render(
 );
 ```
 
-## Setting up the timer
+## Lifecycle Methods
 
+* In applications with many components, it’s very important to free up resources taken by the components when they are destroyed.
+* We want to **set up a timer** whenever the Clock is rendered to the DOM for the first time. This is called `“mounting”` in React.
+* We also want to **clear that timer** whenever the DOM produced by the Clock is removed. This is called `“unmounting”` in React.
+* Remember how in our Youtube app how we had to initalize our event handlers and clear our event handlers manually? No more of that!
+* We declare some special methods on our component class to runs ome code when the component mounts and unmounts
+
+```javascript
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+
+  }
+
+  componentWillUnmount() {
+
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+```
+
+* These methods are called `lifecycle hooks`
+* `componentDidMount()` hook runs after the component output has been rendered to the DOM. We will setup our timer there.
+
+```javascript
+componentDidMount() {
+    this.timerID = setInterval(
+        () => this.tick(),
+        1000
+    );
+}
+```
+
+* While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
+* We will tear down the timer in the `componentWillUnmount()` lifecycle hook:
+
+```javascript
+componentWillUnmount() {
+    clearInterval(this.timerID);
+}
+```
+
+* Finally, we will implement a method called `tick()` that the Clock component will run every second.
+* It will use `this.setState()` to schedule updates to the component local state:
+
+```javascript
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+```
+
+* Every second the browser calls the `tick()` method. Inside it, the Clock component schedules a UI update by calling `setState()` with an object containing the current time.
+* **Thanks to the `setState()` call, React knows the state has changed, and calls the `render()` method again to learn what should be on the screen.**
+* This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+* If the Clock component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle hook so the timer is stopped.
+
+## Using State
+
+* A few things about `setState()`
+* This WILL NOT re-render a component: `this.state.comment = 'Hello';`
+* Instead use `setState()`
+* Correct way: `this.setState({ greeting: 'Hello' });`
+* The ONLY place you assign `this.state` is in the constructor
+* React may batch multiple `setState()` calls into a single update for performance.
+* Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+* For example, this code may fail to update the counter:
+
+```javascript
+// Wrong
+this.setState({
+  counter: this.state.counter + this.props.increment,
+});
+```
+
+* To fix it, use a second form of `setState()` that accepts a function rather than an object. That function will receive the previous state as the first argument, and the props at the time the update is applied as the second argument:
+
+```javascript
+// Correct
+this.setState((prevState, props) => ({
+  counter: prevState.counter + props.increment
+}));
+```
+
+## Data Flows Down
+
+* Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn’t care whether it is defined as a function or a class.
+* This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+* A component may choose to pass its state down as props to its child components:
+
+```javascript
+<h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+```
+
+* This also works for user-defined components:
+
+```javascript
+<FormattedDate date={this.state.date} />
+```
+
+* The `FormattedDate` component would receive the date in its `props` and wouldn’t know whether it came from the Clock’s `state`, from the Clock’s `props`, or was typed by hand:
+
+```javascript
+function FormattedDate(props) {
+  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+}
+```
+
+* This is commonly called a “top-down” or “unidirectional” data flow.
+* Any state is always owned by some specific component, and any data or UI derived from that state can only affect components “below” them in the tree.
