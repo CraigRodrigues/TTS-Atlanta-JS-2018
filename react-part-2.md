@@ -386,3 +386,13 @@ const todoItems = todos.map((todo, index) =>
 * Keys must only be unique among siblings. They do not need otbe globally unique.
 
 ## Lifting State Up
+
+* Often, several components need to reflect the same changing data.
+* We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.
+* In this section, we will work through the React official documentation tutorial to create a temperature calculator that calculates whether the water would boil at a given temperature.
+
+## Homework
+
+1. Read this key React article: [Thinking In React](https://reactjs.org/docs/thinking-in-react.html)
+1. Clone down the [React Calculator Practice]() repo
+1. Remake our vanilla JS calculator, but this time using React
