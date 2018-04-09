@@ -391,8 +391,11 @@ const todoItems = todos.map((todo, index) =>
 * We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.
 * In this section, we will work through the React official documentation tutorial to create a temperature calculator that calculates whether the water would boil at a given temperature.
 
+> There should be a single “source of truth” for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, you should rely on the top-down data flow.
+
 ## Homework
 
 1. Read this key React article: [Thinking In React](https://reactjs.org/docs/thinking-in-react.html)
 1. Clone down the [React Calculator Practice]() repo
 1. Remake our vanilla JS calculator, but this time using React
+1. **Bonus** Mess around with the [React Developer Tools](https://github.com/facebook/react-devtools)
