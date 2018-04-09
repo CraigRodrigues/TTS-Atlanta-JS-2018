@@ -11,22 +11,38 @@
 ## Refactoring the Clock
 
 * Back to clock example
-* Make clock its own components
 
-### Exercise 01
+```javascript
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+}
 
-* Extract the Clock as its own component that takes in props of the current Date/Time
+setInterval(tick, 1000);
+```
+
+### Exercise - Extract a Clock Component
+
+* Extract the Clock as its own functional component that takes in props of the current Date/Time
 * Hint: The current time is made with the Date constructor: `new Date()`
 
-### Exercise 02
+### Clock Should Update Itself
 
 * However we want the clock to update itself, not take in a date.
 * To do this we need to add "state" to our Clock component.
 
 ```javascript
     ReactDOM.render(
-    <Clock />,
-    document.getElementById('root')
+      <Clock />,
+      document.getElementById('root')
     );
 ```
 
