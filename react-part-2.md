@@ -323,6 +323,11 @@ render() {
 
 * We can pass arguments to a bound function as normal. Just make sure it's bound in the constructor while creates a copy of the function!
 
+## Exercise - Heading Changer
+
+1. Create a `Name` class component that renders out an `h1` tag with a name and below that an input field with a submit button.
+1. When you enter a name and click the button it should change the `h1` to match what the user typed and clear the input box
+
 ## Exercise - Up/Down
 
 ![React Counter](/images/react-counter.png)
