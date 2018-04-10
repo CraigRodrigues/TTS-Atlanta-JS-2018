@@ -417,5 +417,5 @@ const todoItems = todos.map((todo, index) =>
 ## Homework
 
 1. Read this key React article: [Thinking In React](https://reactjs.org/docs/thinking-in-react.html)
-1. Create an emoji password generator using React (TODO)
-1. **Bonus** Mess around with the [React Developer Tools](https://github.com/facebook/react-devtools)
+1. Complete the [Emoji Password Generator](https://github.com/CraigRodrigues/emoji-password-maker) app using React (follow the instructions at the repo)
+1. **Bonus** Mess around with the [React Developer Tools](https://github.com/facebook/react-devtools) in Chrome
