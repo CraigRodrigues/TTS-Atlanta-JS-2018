@@ -406,6 +406,13 @@ const todoItems = todos.map((todo, index) =>
 
 * Keys must only be unique among siblings. They do not need otbe globally unique.
 
+## Exercise - List with Delete
+
+* Create a `List` component that will render out an unordered list of things
+* Each list item should have the name of the thing and a delete button
+* Render every item using map and make sure every item has a key
+* When you click `Delete` on an item, it should remove it from the list
+
 ## Lifting State Up
 
 * Often, several components need to reflect the same changing data.
