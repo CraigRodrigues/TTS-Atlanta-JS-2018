@@ -52,6 +52,12 @@ The `defaultProps` will be used to ensure that `this.props.name` will have a val
 
 PropTypes is a separate React library. On npm: [https://www.npmjs.com/package/prop-types](https://www.npmjs.com/package/prop-types)
 
+Installation: `$ npm install -S prop-types`
+
+```javascript
+import PropTypes from 'prop-types';
+```
+
 As your app grows, you can catch a lot of bugs with typechecking. React has some built-in typechecking abilities. To run typechecking on the props for a component, you can assign the special propTypes property:
 
 ```jsx
