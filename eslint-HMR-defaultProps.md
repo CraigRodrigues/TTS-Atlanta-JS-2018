@@ -10,6 +10,7 @@
 - The setup will generate an `eslint.rc` configuration file based on your answers
 - That file will have `"extends": "eslint:recommended"` in it
 - Because of this line, all of the rules ESLint has recommended by default will be turned on which is all you will need for now. See: [https://eslint.org/docs/rules/](https://eslint.org/docs/rules/)
+- Be sure if you want to see the issues "live" use the [VSCode ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - You can disable es-lint rules for lines using `//eslint-disable <rule name>`
 - Be sure to re-enable, or better yet just follow the damn rules!
 - Setup an npm script in your package.json so you can just type `npm run lint` to test all your files
