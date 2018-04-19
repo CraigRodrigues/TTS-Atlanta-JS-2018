@@ -80,7 +80,7 @@ PropTypes exports a bunch of validators that can be used to make sure the data y
 
 **For performance reasons, propTypes is only checked in development mode.**
 
-Props:
+Pros:
 - You can easily catch bugs caused by passing data in the wrong data type (e.g.: An object instead of a string)
 - Someone that uses your component can see all available props including their desired data type at one place.
 - Some code editors support code completion for props, so you can see the available props while typing in the component in a tooltip.

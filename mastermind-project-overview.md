@@ -37,7 +37,7 @@ Your goal is to complete the MVP requirements, but over time you can shoot towar
 - A player should be able to pick the number of rounds or difficulty (8, 10 or 12 rounds)
 - The computer should generate the secret code
 - Make the board look similar to the actual Mastermind board
-- Have a way to show the rules
+- Have a way to show the rules/how to play
 - Show the proper response to player guesses
 - Show the number of rounds remaining and the full board
 - Show the secret code if the player guesses correct or cannot guess within the allotted rounds
