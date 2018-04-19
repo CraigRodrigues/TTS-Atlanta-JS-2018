@@ -17,7 +17,7 @@
 
 ```JSON
     "scripts": {
-        "lint": "eslint *"
+        "lint": "eslint ."
     }
 ```
 
