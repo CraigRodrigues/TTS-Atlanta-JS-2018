@@ -22,9 +22,10 @@ The final project is to recreate the game Mastermind in React using everything y
 1. Where should state live? Try drawing a tree diagram.
 1. How would you handle authentication?
 1. Create a working app WITHOUT any styling or pretty graphics - this should only be worked on once the basics of the game are working
-1. Add one feature at a time!
+1. Only add one feature at a time!
+1. Commit often!
 1. [Work using feature branches!](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
-1. Tracking your features with a tool like [Trello](https://trello.com/b/C4Awm5lK/kanban-board)
+1. Tracking your planned features and progress with a tool like [Trello](https://trello.com/b/C4Awm5lK/kanban-board)
 
 ![Trello Board](https://kek.gg/i/36Mys9.jpeg)
 
