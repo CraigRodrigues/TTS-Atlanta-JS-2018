@@ -1,4 +1,4 @@
-# ESLint, Hot Module Replacement, Default Props and More
+# ESLint, Hot Module Replacement, Default Props and PropTypes
 
 ## ESLint
 
