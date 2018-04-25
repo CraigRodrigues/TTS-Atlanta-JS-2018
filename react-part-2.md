@@ -406,6 +406,13 @@ const todoItems = todos.map((todo, index) =>
 
 * Keys must only be unique among siblings. They do not need otbe globally unique.
 
+## Exercise - List with Delete
+
+* Create a `List` component that will render out an unordered list of things
+* Each list item should have the name of the thing and a delete button
+* Render every item using map and make sure every item has a key
+* When you click `Delete` on an item, it should remove it from the list
+
 ## Lifting State Up
 
 * Often, several components need to reflect the same changing data.
@@ -417,5 +424,6 @@ const todoItems = todos.map((todo, index) =>
 ## Homework
 
 1. Read this key React article: [Thinking In React](https://reactjs.org/docs/thinking-in-react.html)
-1. Create an emoji password generator using React (TODO)
-1. **Bonus** Mess around with the [React Developer Tools](https://github.com/facebook/react-devtools)
+1. Go through this tutorial: [Lifting Up State](https://reactjs.org/docs/lifting-state-up.html)
+1. Complete the [Emoji Password Generator](https://github.com/CraigRodrigues/emoji-password-maker) app using React (follow the instructions at the repo)
+1. **Bonus** Mess around with the [React Developer Tools](https://github.com/facebook/react-devtools) in Chrome
