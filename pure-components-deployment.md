@@ -10,7 +10,7 @@
 
 The very first thing we need to do is to install Firebase CLI (Command Line Interface) globally so that we can access firebase from any directory. Make sure you have node.js and npm installed. Open terminal or command prompt and run the following command.
 
-npm install -g firebase-tools
+`npm install -g firebase-tools`
 
 Make sure you are in the root folder of your project. Now run the below command:
 
@@ -23,7 +23,7 @@ There are only 2 we care about here:
 1.  Firestore
 1.  Hosting
 
-You can deselect an option by pressing Space key on your keyboard or press Enter to use both features. I need both, so I am going to press Enter.
+You can select an option by pressing Space key on your keyboard.
 
 Next, Firebase will ask you to select a project from among the one’s you have already created or just create a new one. I already have my project on Firebase, so I will just select that one.
 
