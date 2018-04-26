@@ -95,6 +95,7 @@ The dashboard on `www.firebase.google.com` allows for easy rollbacks and usage s
 
 ## Extra Resources
 
+- [Developer Roadmap](https://github.com/kamranahmedse/developer-roadmap)
 - [React/Redux Resources](https://github.com/mlubovac/react-redux-resources)
 - [React/Redux Links](https://github.com/markerikson/react-redux-links)
 - [Awesome React](https://github.com/enaqx/awesome-react)
