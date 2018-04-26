@@ -2,6 +2,64 @@
 
 ## Pure Components
 
+`React.PureComponent` is similar to `React.Component` but the difference between the two is that `React.Component` does not implement `shouldComponentUpdate()` on its own, but Pure Components implement is automatically with a shallow prop and state comparison.
+
+By default, a plain `React.Component` has `shouldComponentUpdate` set to always return true. This is good because it means React errs on the side of always updating the component in case there’s any new data to show. However, it’s bad because it means React might trigger unnecessary re-renders. One way to deal with these extra re-renders is to change the `shouldComponentUpdate` function to check when your component needs to update.
+
+If your React component’s `render()` function renders the same result given the same `props` and `state`, you can use `React.PureComponent` for a performance boost in some cases.
+
+### Shallow Comparison
+
+A shallow equality check means that JS only checks that the value’s object ids (as in, the memory address for where JS stores the information for that particular object) are the same, not that their content is the same. So here’s an example where shallow equality is what you and I would usually think of as “equal”:
+
+```javascript
+1;
+2;
+3;
+4;
+5;
+6;
+const value = 'cat';
+
+const item1 = value;
+const item2 = value;
+
+console.log(item1 === item2); // true
+```
+
+And here’s an example where JS’s definition of “equal” and our definition might differ:
+
+```javascript
+1;
+2;
+3;
+4;
+5;
+6;
+const value = 'cat';
+
+const array1 = [value];
+const array2 = [value];
+
+console.log(array1 === array2); // false
+```
+
+Even though we can clearly see the content of array2 is the same as array1 JS registers them as different since their ids are different. In this case we created two completely separate arrays, that just happened to have the same data in them.
+
+### `shouldComponentUpdate(nextProps, nextState)`
+
+Use `shouldComponentUpdate()` to let React know if a component’s output is not affected by the current change in state or props. The default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior.
+
+`shouldComponentUpdate()` is invoked before rendering when new props or state are being received. Defaults to true.
+
+Returning false does not prevent child components from re-rendering when their state changes.
+
+Currently, if `shouldComponentUpdate()` returns false, then `componentWillUpdate()`, `render()`, and `componentDidUpdate()` will not be invoked.
+
+### Pure Component Pitfalls
+
+[Link Here to Blog Post](https://blog.shakacode.com/react-purecomponent-pitfalls-d057882f4b6e)
+
 ## Firebase Deployment
 
 [https://youtu.be/jsRVHeQd5kU](https://youtu.be/jsRVHeQd5kU)
