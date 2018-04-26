@@ -94,3 +94,13 @@ If everything goes well, you should see `$ deploy complete` and you should get h
 The dashboard on `www.firebase.google.com` allows for easy rollbacks and usage stats.
 
 ## Extra Resources
+
+- [React/Redux Resources](https://github.com/mlubovac/react-redux-resources)
+- [React/Redux Links](https://github.com/markerikson/react-redux-links)
+- [Awesome React](https://github.com/enaqx/awesome-react)
+- [JavaScript Understanding the Weird Parts](https://www.udemy.com/understand-javascript/)
+- [Syntax Podcast](https://syntax.fm/)
+- [Professional JavaScript for Web Developers](https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas-ebook/dp/B006PW2URI)
+- [Atlanta JS Meetup](https://www.meetup.com/AtlantaJavaScript/)
+- [Frontend Masters](http://www.frontendmasters.com)
+- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
