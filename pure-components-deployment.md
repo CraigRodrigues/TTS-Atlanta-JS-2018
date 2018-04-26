@@ -102,6 +102,7 @@ The dashboard on `www.firebase.google.com` allows for easy rollbacks and usage s
 - [JavaScript Understanding the Weird Parts](https://www.udemy.com/understand-javascript/)
 - [Syntax Podcast](https://syntax.fm/)
 - [Javascript Jabber Podcast](https://devchat.tv/js-jabber)
+- [Code Newbie Podcast](https://www.codenewbie.org/podcast)
 - [Professional JavaScript for Web Developers](https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas-ebook/dp/B006PW2URI)
 - [Eloquent JavaScript](https://eloquentjavascript.net/)
 - [Atlanta JS Meetup](https://www.meetup.com/AtlantaJavaScript/)
