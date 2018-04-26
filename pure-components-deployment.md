@@ -13,12 +13,6 @@ If your React component’s `render()` function renders the same result given th
 A shallow equality check means that JS only checks that the value’s object ids (as in, the memory address for where JS stores the information for that particular object) are the same, not that their content is the same. So here’s an example where shallow equality is what you and I would usually think of as “equal”:
 
 ```javascript
-1;
-2;
-3;
-4;
-5;
-6;
 const value = 'cat';
 
 const item1 = value;
@@ -30,12 +24,6 @@ console.log(item1 === item2); // true
 And here’s an example where JS’s definition of “equal” and our definition might differ:
 
 ```javascript
-1;
-2;
-3;
-4;
-5;
-6;
 const value = 'cat';
 
 const array1 = [value];
