@@ -1,2 +1,3 @@
 # TTS-Atlanta-JS-2018
-Notes for Feb 2018 Class
+
+Notes and Repos for Feb 2018 Class
