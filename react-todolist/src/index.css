@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+textarea {
+    width: 200px;
+    height: 100px;
+}
+
+.complete {
+    text-decoration: line-through;
+}
